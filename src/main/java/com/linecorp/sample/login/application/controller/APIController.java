@@ -17,15 +17,18 @@ package com.linecorp.sample.login.application.controller;
 
 import javax.servlet.http.HttpSession;
 
+import com.alibaba.fastjson.JSON;
+import com.linecorp.sample.login.infra.dto.UserBindingDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.linecorp.sample.login.infra.line.api.v2.LineAPIService;
 import com.linecorp.sample.login.infra.line.api.v2.response.AccessToken;
 import com.linecorp.sample.login.infra.line.api.v2.response.Verify;
 
 @RestController
+@Slf4j
 public class APIController {
 
     @Autowired
@@ -51,6 +54,12 @@ public class APIController {
     public void revoke(HttpSession httpSession) {
         final AccessToken token = getAccessToken(httpSession);
         lineAPIService.revoke(token);
+    }
+
+    @PostMapping("api/bind")
+    public UserBindingDTO bind(@RequestBody UserBindingDTO dto) {
+        log.info(JSON.toJSONString(dto));
+        return dto;
     }
 
     private AccessToken getAccessToken(HttpSession httpSession) {

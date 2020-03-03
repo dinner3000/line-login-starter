@@ -134,6 +134,8 @@ public class WebController {
             logger.debug("displayName : " + idToken.name);
             logger.debug("pictureUrl : " + idToken.picture);
         }
+//        IdToken idToken = new IdToken();
+//        idToken.setSub("testUserId");
         model.addAttribute("idToken", idToken);
         return "user/success";
     }
