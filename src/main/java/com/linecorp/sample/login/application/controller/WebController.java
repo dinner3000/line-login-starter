@@ -53,6 +53,11 @@ public class WebController {
         return "user/login";
     }
 
+    @RequestMapping("/signup")
+    public String signUp() {
+        return "user/sign_up";
+    }
+
     /**
      * <p>Redirect to LINE Login Page</p>
      */

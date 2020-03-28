@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2016 LINE Corporation
+  ~
+  ~ LINE Corporation licenses this file to you under the Apache License,
+  ~ version 2.0 (the "License"); you may not use this file except in compliance
+  ~ with the License. You may obtain a copy of the License at:
+  ~
+  ~   http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  ~ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  ~ License for the specific language governing permissions and limitations
+  ~ under the License.
+  -->
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/line-login.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/sign_up.js"></script>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="area">
+            <h1>Sign Up Demo</h1>
+            <form action="https://0c58e92a.ngrok.io/signup" method="post">
+              <input type="hidden" name="nonce" id="nonce" value="" />
+              <div class="form-group">
+                <label for="licensePlateInput">License plate</label>
+                <input type="text" class="form-control" name="licensePlate" id="licensePlateInput" aria-describedby="licensePlateHelp"/>
+                <small id="licensePlateHelp" class="form-text text-muted">License plate for DMS user binding</small>
+              </div>
+              <div class="form-group">
+                <label for="cellphoneInput">Cellphone</label>
+                <input type="text" class="form-control" name="cellPhone" id="cellphoneInput" aria-describedby="cellphoneHelp"/>
+                <small id="cellphoneHelp" class="form-text text-muted">Cellphone for DMS user binding</small>
+              </div>
+              <button type="submit" id="bind" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
